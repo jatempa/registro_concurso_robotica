@@ -102,7 +102,7 @@ easy_admin:
             list:
                 title: "Alumnos"
                 actions: [{ name: 'new', label: 'Agregar Alumno' }]
-                fields: ['id', 'nombre', 'apellido_paterno', 'apellido_materno', { property: 'correo_electronico', type: 'email', label: 'Correo electr&oacute;nico' }]
+                fields: ['id', 'nombre', 'apellido_paterno', 'apellido_materno', { property: 'correo_electronico', type: 'email', label: 'Correo electr&oacute;nico' }, 'carrera']
         Asesor:
             label: 'Asesores'
             class: AppBundle\Entity\Asesor
