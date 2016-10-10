@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block menu %}
+    <li><a href="{{ path('homepage') }}">Convocatoria</a></li>
+    <li class="active"><a href="{{ path('convocatoria') }}">Registo</a></li>
+{% endblock %}
+
+{% block body %}
+<div class="page-header">
+  <h1>Convocatoria cerrada</h1>
+  <h2>Te invitamos a participar en nuestro siguiente torneo.</h2>
+  <h3>Muchas gracias a los equipos registrados:</h3>
+  <ol>    
+  {% for equipo in equipos %}
+    <li>
+      {{ equipo.nombre }}
+    </li>
+  {% endfor %}
+  </ol>
+  <h3>Atte. Club de rob&oacute;tica ITMxli.</h3>
+</div>
+{% endblock %}
