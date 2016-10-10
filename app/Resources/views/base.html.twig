@@ -1,13 +1,52 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8" />
-        <title>{% block title %}Welcome!{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-    </head>
-    <body>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>{% block title %}Concurso de rob&oacute;tica ITM{% endblock %}</title>
+    <link href="{{ asset('bundles/app/css/bootstrap-theme.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/app/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('bundles/app/css/custom_style.css') }}" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+</head>
+<body>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <img src="{{ asset('uploads/critmxli.jpg') }}" alt="logo" height="50px" width="110px" class='visible-md visible-lg'>
+          <a class="navbar-brand visible-sm visible-xs" href="#">Club de r&oacute;botica ITMxli</a>
+        </div>
+        <div id="navbar" class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+          {% block menu %}
+            <li><a href="{{ path('homepage') }}">Convocatoria</a></li>
+          {% endblock %}
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <!-- Begin page content -->
+    <div class="container">
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
-    </body>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <p>Sitio desarrollado por <a href="https://twitter.com/atempa09">@atempa09</a></p>
+      </div>
+    </footer>
+    <!-- Bootstrap core JavaScript -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery</script>
+    <script src="{{ asset('bundles/app/js/bootstrap.min.js') }}"></script>
+</body>
 </html>

@@ -65,6 +65,11 @@ swiftmailer:
     password:  "%mailer_password%"
     spool:     { type: memory }
 
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: AppBundle\Entity\Usuario
+
 easy_admin:
     site_name: 'Club de rob&oacute;tica'
     formats:
@@ -125,3 +130,11 @@ easy_admin:
             list:
                 title: "Robots"
                 actions: [{ name: 'new', label: 'Agregar Robot' }]
+        Usuario:
+            class: AppBundle\Entity\Usuario
+            form:
+                fields:
+                    - username
+                    - email
+                    - enabled
+                    - lastLogin
