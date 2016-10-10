@@ -130,11 +130,3 @@ easy_admin:
             list:
                 title: "Robots"
                 actions: [{ name: 'new', label: 'Agregar Robot' }]
-        Usuario:
-            class: AppBundle\Entity\Usuario
-            form:
-                fields:
-                    - username
-                    - email
-                    - enabled
-                    - lastLogin
