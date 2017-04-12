@@ -1,0 +1,81 @@
+AppBundle\Entity\Alumno: 
+  alumno1:
+    noControl: '13490404'
+    nombre: <firstName()> 
+    apellidoPaterno: <lastName()> 
+    apellidoMaterno: <lastName()>
+    correoElectronico: <email()>
+    semestre: 5
+    carrera: @carrera3
+  alumno2:
+    noControl: '16491242'
+    nombre: <firstName()>
+    apellidoPaterno: <lastName()>
+    apellidoMaterno: <lastName()>
+    correoElectronico: <email()>
+    semestre: 3
+    carrera: @carrera3
+  alumno3:
+    noControl: '1349857'
+    nombre: <firstName()>
+    apellidoPaterno: <lastName()>
+    apellidoMaterno: <lastName()>
+    correoElectronico: <email()>
+    semestre: 6
+    carrera: @carrera3
+  alumno4:
+    noControl: '16490053'
+    nombre: <firstName()>
+    apellidoPaterno: <lastName()>
+    apellidoMaterno: <lastName()>
+    correoElectronico: <email()>
+    semestre: 7
+    carrera: @carrera3
+  alumno5:
+    noControl: '15490532'
+    nombre: <firstName()>
+    apellidoPaterno: <lastName()>
+    apellidoMaterno: <lastName()>
+    correoElectronico: <email()>
+    semestre: 5
+    carrera: @carrera3
+  alumno6:
+    noControl: '13490927'
+    nombre: <firstName()>
+    apellidoPaterno: <lastName()>
+    apellidoMaterno: <lastName()>
+    correoElectronico: <email()>
+    semestre: 6
+    carrera: @carrera3
+  alumno7:
+    noControl: '13490047'
+    nombre: <firstName()>
+    apellidoPaterno: <lastName()>
+    apellidoMaterno: <lastName()>
+    correoElectronico: <email()>
+    semestre: 9
+    carrera: @carrera3
+  alumno8:
+    noControl: '11490572'
+    nombre: <firstName()>
+    apellidoPaterno: <lastName()>
+    apellidoMaterno: <lastName()>
+    correoElectronico: <email()>
+    semestre: 7
+    carrera: @carrera3
+  alumno9:
+    noControl: '12760389'
+    nombre: <firstName()>
+    apellidoPaterno: <lastName()>
+    apellidoMaterno: <lastName()>
+    correoElectronico: <email()>
+    semestre: 8
+    carrera: @carrera3
+  alumno10:
+    noControl: '11490071'
+    nombre: <firstName()>
+    apellidoPaterno: <lastName()>
+    apellidoMaterno: <lastName()>
+    correoElectronico: <email()>
+    semestre: 5
+    carrera: @carrera3

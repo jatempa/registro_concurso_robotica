@@ -1,0 +1,30 @@
+AppBundle\Entity\Carrera: 
+  carrera1: 
+    nombre: 'Ingeniería Industrial' 
+ 
+  carrera2: 
+    nombre: 'Ingeniería en Logística' 
+ 
+  carrera3: 
+    nombre: 'Ingeniería Mecatrónica' 
+ 
+  carrera4: 
+    nombre: 'Ingeniería Mecánica' 
+ 
+  carrera5: 
+    nombre: 'Ingeniería Sistemas Computacionales' 
+ 
+  carrera6: 
+    nombre: 'Ingeniería en Gestión Empresarial' 
+ 
+  carrera7: 
+    nombre: 'Ingenieria en Energías Renovables' 
+ 
+  carrera8: 
+    nombre: 'Ingeniería Electrónica' 
+ 
+  carrera9: 
+    nombre: 'Ingeniería Química' 
+ 
+  carrera10: 
+    nombre: 'Ingeniería Eléctrica'
