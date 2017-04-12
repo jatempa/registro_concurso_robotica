@@ -2,6 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
+    - { resource: easyadmin.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -69,64 +70,6 @@ fos_user:
     db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
     firewall_name: main
     user_class: AppBundle\Entity\Usuario
-
-easy_admin:
-    site_name: 'Club de rob&oacute;tica'
-    formats:
-      date: 'd/m/Y'
-    design:
-      color_scheme: 'dark'
-      brand_color: '#f44336'
-      form_theme: 'horizontal'
-    list:
-        max_results: 10
-        actions:
-            - { name: 'show', label: '', icon: 'search'}
-            - { name: 'edit', label: '', icon: 'pencil' }
-            - { name: '-delete', label: '', icon: '' }
-            - { name: 'search', label: 'Búsqueda' }
-    show:
-        actions:
-            - { name: 'edit', label: 'Actualizar' }
-            - { name: 'list', label: 'Regresar al menu' }
-    edit:
-        actions:
-            - { name: 'list', label: 'Regresar al menú' }
-    new:
-        actions:
-            - { name: 'list', label: 'Regresar al menú' }       
-    entities:
-        Alumno:
-            label: 'Alumnos'
-            class: AppBundle\Entity\Alumno
-            list:
-                title: "Alumnos"
-                actions: [{ name: 'new', label: 'Agregar Alumno' }]
-                fields: ['id', 'nombre', 'apellido_paterno', 'apellido_materno', { property: 'correo_electronico', type: 'email', label: 'Correo electr&oacute;nico' }, 'carrera']
-        Asesor:
-            label: 'Asesores'
-            class: AppBundle\Entity\Asesor
-            list:
-                title: "Asesores"
-                actions: [{ name: 'new', label: 'Agregar Asesor' }]
-                fields: ['id', 'nombre', 'correo_electronico', { property: 'correo_electronico', type: 'email', label: 'Correo electr&oacute;nico' }]
-        Carrera:
-            label: 'Carreras'
-            class: AppBundle\Entity\Carrera
-            list:
-                title: "Carreras"
-                actions: [{ name: 'new', label: 'Agregar Carrera' }]
-                fields: ['id', 'nombre']                
-        Integrante:
-            label: 'Equipos'
-            class: AppBundle\Entity\Integrante
-            list:
-                title: "Equipos"
-                actions: [{ name: 'new', label: 'Agregar Integrante' }]
-                fields: ['id', 'alumno', { property: 'capitan', type: 'boolean', label: 'Capit&aacute;n' }, { property: 'equipo', label: 'Robot' }, { property: 'equipo.asesor', label: 'Asesor' }]
-        Robot:
-            label: 'Robots'
-            class: AppBundle\Entity\Robot
-            list:
-                title: "Robots"
-                actions: [{ name: 'new', label: 'Agregar Robot' }]
+    from_email:
+        address: "%mailer_user%"
+        sender_name: 'Concurso de Robot Seguilínea 2017'
