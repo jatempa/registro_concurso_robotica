@@ -1,0 +1,18 @@
+AppBundle\Entity\Alumno: 
+  alumno{1..5}: 
+    nombre: <firstName()> 
+    apellidoPaterno: <lastName()> 
+    apellidoMaterno: <lastName()> 
+    carrera: @carrera3 
+ 
+  alumno{6..10}: 
+    nombre: <firstName()> 
+    apellidoPaterno: <lastName()> 
+    apellidoMaterno: <lastName()> 
+    carrera: @carrera5 
+ 
+  alumno{11..15}: 
+    nombre: <firstName()> 
+    apellidoPaterno: <lastName()> 
+    apellidoMaterno: <lastName()> 
+    carrera: @carrera8
