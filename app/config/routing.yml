@@ -9,3 +9,8 @@ easy_admin_bundle:
     resource: "@EasyAdminBundle/Controller/"
     type:     annotation
     prefix:   /critadminmxli
+
+carrera_rest:
+    type: rest
+    resource: "@AppBundle/Controller/DefaultController.php"
+    prefix: /api/
