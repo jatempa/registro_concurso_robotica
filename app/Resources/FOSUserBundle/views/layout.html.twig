@@ -1,0 +1,27 @@
+{% extends '::base.html.twig' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block body %}
+    <div class="row">
+        <div class="col s12">
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+    </div>
+{% endblock body %}
+
+{% block footer %}
+{% endblock footer %}
+
+{% block javascripts %}
+    <script>
+        $(document).ready(function () {
+            $('.alert').hide().fadeIn("slow");
+            $('.alert-autocloseable-danger').delay(1500).fadeOut("slow", function() {
+                $('#autoclosable-btn-danger').prop("disabled", false);
+            });
+        });
+    </script>
+{% endblock %}
