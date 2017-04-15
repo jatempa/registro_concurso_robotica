@@ -12,5 +12,5 @@ easy_admin_bundle:
 
 carrera_rest:
     type: rest
-    resource: "@AppBundle/Controller/DefaultController.php"
-    prefix: /api/
+    resource: "@AppBundle/Controller/RoboticaRestController.php"
+    prefix: /api
