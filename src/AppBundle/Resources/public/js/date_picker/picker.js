@@ -245,7 +245,7 @@ function PickerConstructor( ELEMENT, NAME, COMPONENT, OPTIONS ) {
                     }
 
                     // Pass focus to the root element’s jQuery object.
-                    // * Workaround for iOS8 to bring the picker’s root into view.
+                    // * Workaround for iOS8 to bring the picker’s root into views.
                     P.$root.eq(0).focus()
 
                     // Bind the document events.
