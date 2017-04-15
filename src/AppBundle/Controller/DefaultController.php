@@ -5,30 +5,22 @@ namespace AppBundle\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use AppBundle\Entity\Equipo;
 
 class DefaultController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/", name="convocatoria")
      */
-    public function indexAction(Request $request)
+    public function convocatoriaAction()
     {
-        // replace this example code with whatever you need
-        return $this->render('default/index.html.twig', array(
-            'base_dir' => realpath($this->container->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
-        ));
+        return $this->render('default/index.html.twig');
     }
  
     /**
-     * @Route("/registrar/equipo", name="convocatoria")
+     * @Route("/registrar/equipo", name="registro")
      */
-    public function convocatoriaAction(Request $request)
+    public function registroAction()
     {
-        $em = $this->getDoctrine()->getManager();
-
-        $equipos = $em->getRepository('AppBundle:Equipo')->findEquipos();
-        // replace this example code with whatever you need
-        return $this->render('default/convocatoria_cerrada.html.twig', array('equipos' => $equipos));
+        return $this->render('default/registro.html.twig');
     }
 }
