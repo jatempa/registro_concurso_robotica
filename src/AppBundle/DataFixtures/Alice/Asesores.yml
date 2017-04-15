@@ -1,0 +1,49 @@
+AppBundle\Entity\Asesor:
+  asesor1:
+    nombre: 'Alejandro Ortega Nazario'
+    correoElectronico: 'aortega43@gmail.com'
+  asesor2:
+    nombre: 'Ana Maria Hernandez Campos'
+    correoElectronico: 'itmxli@yahoo.com'
+  asesor3:
+    nombre: 'Fidel Díaz Muños'
+    correoElectronico: 'fdiaz701@hotmail.com'
+  asesor4:
+    nombre: 'German Rodriguez Avila'
+    correoElectronico: 'yerman@itmexicali.edu.mx'
+  asesor5:
+    nombre: 'Ignacio Rene Chavira Soto'
+    correoElectronico: 'rene_chavira@yahoo.com'
+  asesor6:
+    nombre: 'Jaime López López'
+    correoElectronico: 'jaime.lopez@cecytebc.edu.mx'
+  asesor7:
+    nombre: 'Jaime Olvera Ruiz'
+    correoElectronico: 'ing.jaimeolvera.profe@gmail.com'
+  asesor8:
+    nombre: 'José Carlos Sanchez Lopez'
+    correoElectronico: 'josecarlos@itmexicali.edu.mx'
+  asesor9:
+    nombre: 'Jose Luis Juarez Viveros'
+    correoElectronico: 'juvi2k@hotmail.com'
+  asesor10:
+    nombre: 'Luis Aram Tafoya Diaz'
+    correoElectronico: 'aramtd@itmexicali.edu.mx'
+  asesor11:
+    nombre: 'Lydia Raquel Esquivel Chávez'
+    correoElectronico: 'Lyraes0120@gmail.com'
+  asesor12:
+    nombre: 'Marco Antonio Rodriguez Vera'
+    correoElectronico: 'coaxtla_marco@hotmail.com'
+  asesor13:
+    nombre: 'Pedro Mayorga Ortiz'
+    correoElectronico: 'pmogauss@gmail.com'
+  asesor14:
+    nombre: 'Prieto Avalos Guillermo'
+    correoElectronico: 'guillermoprieto@itmexicali.edu.mx'
+  asesor15:
+    nombre: 'Ricardo Jimenez'
+    correoElectronico: 'ricardojimenezg@itmexicali.edu.mx'
+  asesor16:
+    nombre: 'Veronica Quintero Rosas'
+    correoElectronico: 'veroquintero@yandex.ru'
