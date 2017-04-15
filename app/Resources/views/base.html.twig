@@ -17,6 +17,7 @@
     {% endblock %}
 </head>
 <body>
+    {% block header %}
     <nav>
         <div class="nav-wrapper">
             <ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -26,12 +27,15 @@
             </ul>
         </div>
     </nav>
+    {% endblock %}
+
     <!-- Begin page content -->
     <div class="container">
         {% block body %}{% endblock %}
     </div>
 
-    <!-- Footer -->
+
+    {% block footer %}
     <footer class="page-footer">
         <div class="container">
             <div class="row">
@@ -56,6 +60,7 @@
             </div>
         </div>
     </footer>
+    {% endblock %}
 
     {% block javascripts %}
         <script src="{{ asset('bundles/app/js/jquery.min.js') }}"></script>
