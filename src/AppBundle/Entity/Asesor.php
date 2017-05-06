@@ -15,7 +15,7 @@ class Asesor
     /**
      * @var int
      *
-     * @ORM\Column(name="id", type="integer")
+     * @ORM\Column(name="id_asesor", type="integer")
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
@@ -31,15 +31,28 @@ class Asesor
     /**
      * @var string
      *
+     * @ORM\Column(name="apellido_paterno", type="string", length=100)
+     */
+    private $apellidoPaterno;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellido_materno", type="string", length=100, nullable=true)
+     */
+    private $apellidoMaterno;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="correo_electronico", type="string", length=100)
      */
     private $correoElectronico;
 
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -50,6 +63,7 @@ class Asesor
      * Set nombre
      *
      * @param string $nombre
+     *
      * @return Asesor
      */
     public function setNombre($nombre)
@@ -62,7 +76,7 @@ class Asesor
     /**
      * Get nombre
      *
-     * @return string 
+     * @return string
      */
     public function getNombre()
     {
@@ -70,9 +84,58 @@ class Asesor
     }
 
     /**
+     * Set apellidoPaterno
+     *
+     * @param string $apellidoPaterno
+     *
+     * @return Asesor
+     */
+    public function setApellidoPaterno($apellidoPaterno)
+    {
+        $this->apellidoPaterno = $apellidoPaterno;
+
+        return $this;
+    }
+
+    /**
+     * Get apellidoPaterno
+     *
+     * @return string
+     */
+    public function getApellidoPaterno()
+    {
+        return $this->apellidoPaterno;
+    }
+
+    /**
+     * Set apellidoMaterno
+     *
+     * @param string $apellidoMaterno
+     *
+     * @return Asesor
+     */
+    public function setApellidoMaterno($apellidoMaterno)
+    {
+        $this->apellidoMaterno = $apellidoMaterno;
+
+        return $this;
+    }
+
+    /**
+     * Get apellidoMaterno
+     *
+     * @return string
+     */
+    public function getApellidoMaterno()
+    {
+        return $this->apellidoMaterno;
+    }
+
+    /**
      * Set correoElectronico
      *
      * @param string $correoElectronico
+     *
      * @return Asesor
      */
     public function setCorreoElectronico($correoElectronico)
@@ -85,15 +148,15 @@ class Asesor
     /**
      * Get correoElectronico
      *
-     * @return string 
+     * @return string
      */
     public function getCorreoElectronico()
     {
         return $this->correoElectronico;
     }
 
-    public function __toString() 
-    { 
-        return $this->getNombre(); 
-    } 
+    public function __toString()
+    {
+        return $this->getNombre() . " " . $this->getApellidoPaterno();
+    }
 }

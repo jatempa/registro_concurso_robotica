@@ -1,5 +1,5 @@
 <?php
-// src/AppBundle/Entity/User.php
+// src/AppBundle/Entity/Usuario.php
 
 namespace AppBundle\Entity;
 
@@ -13,8 +13,8 @@ use Doctrine\ORM\Mapping as ORM;
 class Usuario extends BaseUser
 {
     /**
-     * @ORM\Id
-     * @ORM\Column(type="integer")
+     * @ORM\Id@
+     * @ORM\Column(name="id_usuario", type="integer")
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     protected $id;

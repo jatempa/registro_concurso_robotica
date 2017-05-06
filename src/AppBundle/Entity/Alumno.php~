@@ -64,12 +64,12 @@ class Alumno
     private $semestre;
 
     /** @ORM\ManyToOne(targetEntity="AppBundle\Entity\Carrera")  
-     *  @ORM\JoinColumn(name="carrera", referencedColumnName="id_carrera")
+     *  @ORM\JoinColumn(name="carrera", referencedColumnName="id") 
      */ 
     private $carrera;
 
     /** @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equipo", inversedBy="alumnos")
-     *  @ORM\JoinColumn(name="equipo", referencedColumnName="id_equipo")
+     *  @ORM\JoinColumn(name="id_equipo", referencedColumnName="id")
      */
     private $equipo;
 
@@ -242,32 +242,8 @@ class Alumno
         return $this->carrera;
     }
 
-    /**
-     * Set equipo
-     *
-     * @param \AppBundle\Entity\Equipo $equipo
-     *
-     * @return Alumno
-     */
-    public function setEquipo(\AppBundle\Entity\Equipo $equipo = null)
-    {
-        $this->equipo = $equipo;
-
-        return $this;
-    }
-
-    /**
-     * Get equipo
-     *
-     * @return \AppBundle\Entity\Equipo
-     */
-    public function getEquipo()
-    {
-        return $this->equipo;
-    }
-
-    public function __toString()
-    {
-        return $this->getNombre() . " " . $this->getApellidoPaterno() . " " . $this->getApellidoMaterno();
-    }
+    public function __toString() 
+    { 
+        return $this->getNombre() . " " . $this->getApellidoPaterno() . " " . $this->getApellidoMaterno(); 
+    } 
 }

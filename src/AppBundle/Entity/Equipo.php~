@@ -23,12 +23,12 @@ class Equipo
     private $id;
 
     /** @ORM\OneToOne(targetEntity="AppBundle\Entity\Asesor")
-     *  @ORM\JoinColumn(name="asesor", referencedColumnName="id_asesor")
+     *  @ORM\JoinColumn(name="asesor", referencedColumnName="id")
      */
     private $asesor;
 
     /** @ORM\OneToOne(targetEntity="AppBundle\Entity\Robot")
-     *  @ORM\JoinColumn(name="robot", referencedColumnName="id_robot")
+     *  @ORM\JoinColumn(name="robot", referencedColumnName="id") 
      */ 
     private $robot;
 
@@ -93,42 +93,8 @@ class Equipo
         return $this->robot;
     }
 
-    /**
-     * Add alumno
-     *
-     * @param \AppBundle\Entity\Alumno $alumno
-     *
-     * @return Equipo
-     */
-    public function addAlumno(\AppBundle\Entity\Alumno $alumno)
-    {
-        $this->alumnos[] = $alumno;
-
-        return $this;
-    }
-
-    /**
-     * Remove alumno
-     *
-     * @param \AppBundle\Entity\Alumno $alumno
-     */
-    public function removeAlumno(\AppBundle\Entity\Alumno $alumno)
-    {
-        $this->alumnos->removeElement($alumno);
-    }
-
-    /**
-     * Get alumnos
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getAlumnos()
-    {
-        return $this->alumnos;
-    }
-
-    public function __toString()
-    {
-        return $this->getRobot()->getNombre();
-    }
+    public function __toString() 
+    { 
+        return $this->getRobot()->getNombre(); 
+    } 
 }

@@ -1,0 +1,57 @@
+<?php
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Asesor
+ *
+ * @ORM\Table(name="asesores")
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\AsesorRepository")
+ */
+class Asesor
+{
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=255)
+     */
+    private $nombre;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellido_paterno", type="string", length=100)
+     */
+    private $apellidoPaterno;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="apellido_materno", type="string", length=100, nullable=true)
+     */
+    private $apellidoMaterno;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="correo_electronico", type="string", length=100)
+     */
+    private $correoElectronico;
+
+
+/*    public function __toString()
+    { 
+        return $this->getNombre();
+    } */
+}
