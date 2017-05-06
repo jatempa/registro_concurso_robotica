@@ -44,14 +44,7 @@ easy_admin:
             list:
                 title: "Carreras"
                 actions: [{ name: 'new', label: 'Agregar Carrera' }]
-                fields: ['id', 'nombre']                
-        Integrante:
-            label: 'Equipos'
-            class: AppBundle\Entity\Integrante
-            list:
-                title: "Equipos"
-                actions: [{ name: 'new', label: 'Agregar Integrante' }]
-                fields: ['id', 'alumno', { property: 'capitan', type: 'boolean', label: 'Capit&aacute;n' }, { property: 'equipo', label: 'Robot' }, { property: 'equipo.asesor', label: 'Asesor' }]
+                fields: ['id', 'nombre']
         Robot:
             label: 'Robots'
             class: AppBundle\Entity\Robot
