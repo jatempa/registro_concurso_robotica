@@ -13,7 +13,7 @@ class DefaultController extends Controller
      */
     public function convocatoriaAction()
     {
-        return $this->render('default/index.html.twig');
+        return $this->render('default/convocatoria.twig');
     }
  
     /**
