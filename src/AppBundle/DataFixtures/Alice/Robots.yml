@@ -1,0 +1,7 @@
+AppBundle\Entity\Robot:
+  robot1:
+    nombre: 'Robotin'
+  robot2:
+    nombre: 'Maxirobot'
+  robot3:
+    nombre: 'Megablaster'

@@ -71,11 +71,3 @@ AppBundle\Entity\Alumno:
     correoElectronico: <email()>
     semestre: 8
     carrera: @carrera3
-  alumno10:
-    noControl: '11490071'
-    nombre: <firstName()>
-    apellidoPaterno: <lastName()>
-    apellidoMaterno: <lastName()>
-    correoElectronico: <email()>
-    semestre: 5
-    carrera: @carrera3

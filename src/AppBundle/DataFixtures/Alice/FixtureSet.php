@@ -7,6 +7,7 @@ $set = $manager->createFixtureSet();
 $set->addFile(__DIR__.'/Usuarios.yml', 'yaml');
 $set->addFile(__DIR__.'/Carreras.yml', 'yaml');
 $set->addFile(__DIR__.'/Asesores.yml', 'yaml');
-//$set->addFile(__DIR__.'/Alumnos.yml', 'yaml');
+$set->addFile(__DIR__.'/Alumnos.yml', 'yaml');
+$set->addFile(__DIR__.'/Robots.yml', 'yaml');
 
 return $set;
