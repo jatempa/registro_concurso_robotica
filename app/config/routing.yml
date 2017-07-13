@@ -10,7 +10,12 @@ easy_admin_bundle:
     type:     annotation
     prefix:   /admin
 
+asesor_rest:
+    type: rest
+    resource: "@AppBundle/Controller/AsesorRestController.php"
+    prefix: /api
+
 carrera_rest:
     type: rest
-    resource: "@AppBundle/Controller/RoboticaRestController.php"
+    resource: "@AppBundle/Controller/CarreraRestController.php"
     prefix: /api
