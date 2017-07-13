@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class AsesorRepository extends EntityRepository
 {
+    public function findAsesores()
+    {
+        $em = $this->getEntityManager();
+        $dql = $em->createQueryBuilder();
+        $dql->select('a.nombre', 'a.apellidoPaterno', 'a.apellidoMaterno', 'a.correoElectronico')
+            ->from('AppBundle:Asesor', 'a');
+
+        return $dql->getQuery()->getResult();
+    }
 }

@@ -24,7 +24,8 @@
         "javiereguiluz/easyadmin-bundle": "^1.15",
         "friendsofsymfony/user-bundle": "~2.0@dev",
         "h4cc/alice-fixtures-bundle": "^0.5.1",
-        "friendsofsymfony/rest-bundle": "^2.1"
+        "friendsofsymfony/rest-bundle": "^2.1",
+        "liuggio/excelbundle": "^2.1"
     },
     "require-dev": {
         "sensio/generator-bundle": "~3.0",
