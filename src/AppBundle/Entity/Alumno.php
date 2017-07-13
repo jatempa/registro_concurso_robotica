@@ -52,7 +52,7 @@ class Alumno
     /**
      * @var string
      *
-     * @ORM\Column(name="correo_electronico", type="string", length=100, nullable=true, unique=true)
+     * @ORM\Column(name="correo_electronico", type="string", length=100, unique=true)
      */
     private $correoElectronico;
 

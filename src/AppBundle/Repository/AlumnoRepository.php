@@ -12,4 +12,14 @@ use Doctrine\ORM\EntityRepository;
  */
 class AlumnoRepository extends EntityRepository
 {
+    public function findAlumnos()
+    {
+        $em = $this->getEntityManager();
+        $dql = $em->createQueryBuilder();
+        $dql->select('a.nombre', 'a.apellidoPaterno', 'a.apellidoMaterno', 'a.correoElectronico', 'a.semestre', 'c.nombre as carrera')
+            ->from('AppBundle:Alumno', 'a')
+            ->innerJoin('a.carrera', 'c');
+
+        return $dql->getQuery()->getResult();
+    }
 }
