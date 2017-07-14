@@ -11,7 +11,7 @@ easy_admin:
         actions:
             - { name: 'show', label: '', icon: 'search'}
             - { name: 'edit', label: '', icon: 'pencil' }
-            - { name: '-delete', label: '', icon: '' }
+            - { name: 'delete', label: '', icon: 'trash' }
             - { name: 'search', label: 'Búsqueda' }
     show:
         actions:
@@ -36,6 +36,7 @@ easy_admin:
                   - { property: 'apellidoPaterno', label: 'Apellido Paterno' }
                   - { property: 'apellidoMaterno', label: 'Apellido Materno' }
                   - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico' }
+                  - { property: 'semestre', label: 'Semestre' }
                   - { property: 'carrera', label: 'Carrera' }
             form:
                 fields:
@@ -43,7 +44,8 @@ easy_admin:
                   - { property: 'apellidoPaterno', label: 'Apellido Paterno' }
                   - { property: 'apellidoMaterno', label: 'Apellido Materno' }
                   - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico', type_options: { required: true } }
-                  - { property: 'carrera', label: 'Carrera' }
+                  - { property: 'semestre', label: 'Semestre' }
+                  - { property: 'carrera', label: 'Carrera', type_options: { required: true } }
         Asesor:
             label: 'Asesores'
             class: AppBundle\Entity\Asesor
