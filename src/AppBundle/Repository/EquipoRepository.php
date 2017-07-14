@@ -16,9 +16,11 @@ class EquipoRepository extends EntityRepository
 	{
 		$em = $this->getEntityManager();
 		$dql = $em->createQueryBuilder();
-		$dql->select('e.nombre')
-		    ->from('AppBundle:Robot', 'e');
-
+		$dql->select('e.nombre equipo', "concat(ase.nombre, ' ', ase.apellidoPaterno) asesor", 'r.nombre robot', "concat(alu.nombre, ' ', alu.apellidoPaterno, ' - ', alu.correoElectronico) alumno")
+		    ->from('AppBundle:Equipo', 'e')
+            ->innerJoin('e.asesor', 'ase')
+            ->innerJoin('e.robot', 'r')
+            ->innerJoin('e.alumnos', 'alu');
 		return $dql->getQuery()->getResult();
 	}
 }
