@@ -1,5 +1,199 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
+<div class="row">
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <h2>Registro</h2>
+    <main>
+      <form>
+        <div class="row">
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="form-group">
+              <label for="txtEquipo">Equipo</label>
+              <input type="text" class="form-control" id="txtEquipo" placeholder="Introduce el nombre de tú equipo">
+            </div>
+          </div>
+          <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+            <div class="form-group">
+              <label for="txtRobot">Robot</label>
+              <input type="text" class="form-control" id="txtRobot" placeholder="Introduce el nombre de tú robot">
+            </div>
+          </div>
+        </div>
+        <h3>Asesor</h3>
+        <div class="row">
+          <div v-if="nuevoasesor">
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                <label for="txtNombreAsesor">Nombre(s)</label>
+                <input type="text" class="form-control" id="txtNombreAsesor" placeholder="Nombre de tú asesor">
+              </div>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                <label for="txtAppAsesor">Apellido Paterno</label>
+                <input type="text" class="form-control" id="txtAppAsesor" placeholder="Apellido paterno de tú asesor">
+              </div>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                <label for="txtApmAsesor">Apellido Materno</label>
+                <input type="text" class="form-control" id="txtApmAsesor" placeholder="Apellido materno de tú asesor">
+              </div>
+            </div>
+            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+              <div class="form-group">
+                <label for="txtEmailAsesor">Correo electrónico</label>
+                <input type="email" class="form-control" id="txtEmailAsesor" placeholder="asesor@ejemplo.com">
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+              <div class="form-group">
+                <input type="checkbox" @click="selectAsesor"/> Elige esta casilla para seleccionar un asesor ya registrado
+              </div>
+            </div>
+          </div>
+          <div v-else>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <select class="form-control" id="sltAsesor">
+                  <option value="0" selected>Selecciona el nombre de un Asesor</option>
+                  <option v-for="asesor in asesores">
+                    ${ asesor.nombre } ${ asesor.apellidoPaterno } ${ asesor.apellidoMaterno }
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <div class="form-group">
+                <input type="checkbox" v-model="nuevoasesor"/> Elige esta casilla para registrar un nuevo asesor
+            </div>
+          </div>
+        </div>
+        </div>
+        <h3>Capitan</h3>
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtNombreAlumnoA">Nombre(s)</label>
+              <input type="text" class="form-control" id="txtNombreAlumnoA" placeholder="Nombre del capitan">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtAppAlumnoA">Apellido Paterno</label>
+              <input type="text" class="form-control" id="txtAppAlumnoA" placeholder="Apellido paterno del capitan">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtApmAlumnoA">Apellido Materno</label>
+              <input type="text" class="form-control" id="txtApmAlumnoA" placeholder="Apellido materno del capitan">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtEmailAlumnoA">Correo electrónico</label>
+              <input type="email" class="form-control" id="txtEmailAlumnoA" placeholder="capitan@ejemplo.com">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtCarreraA">Carrera</label>
+              <select class="form-control" id="sltCarreraA">
+                <option value="0" selected>Selecciona una carrera</option>
+                <option v-for="carrera in carreras">
+                    ${ carrera.nombre }
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <h3>Integrante 2</h3>
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtNombreAlumnoB">Nombre(s)</label>
+              <input type="text" class="form-control" id="txtNombreAlumnoB" placeholder="Nombre del integrante">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtAppAlumnoB">Apellido Paterno</label>
+              <input type="text" class="form-control" id="txtAppAlumnoB" placeholder="Apellido paterno del integrante">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtApmAlumnoB">Apellido Materno</label>
+              <input type="text" class="form-control" id="txtApmAlumnoB" placeholder="Apellido materno del integrante">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtEmailAlumnoB">Correo electrónico</label>
+              <input type="email" class="form-control" id="txtEmailAlumnoB" placeholder="integrante@ejemplo.com">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtCarreraB">Carrera</label>
+              <select class="form-control" id="sltCarreraB">
+                <option value="0" selected>Selecciona una carrera</option>
+                <option v-for="carrera in carreras">
+                  ${ carrera.nombre }
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <h3>Integrante 3</h3>
+        <div class="row">
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtNombreAlumnoC">Nombre(s)</label>
+              <input type="text" class="form-control" id="txtNombreAlumnoC" placeholder="Nombre del integrante">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtAppAlumnoC">Apellido Paterno</label>
+              <input type="text" class="form-control" id="txtAppAlumnoC" placeholder="Apellido paterno del integrante">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtApmAlumnoC">Apellido Materno</label>
+              <input type="text" class="form-control" id="txtApmAlumnoC" placeholder="Apellido materno del integrante">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtEmailAlumnoC">Correo electrónico</label>
+              <input type="email" class="form-control" id="txtEmailAlumnoC" placeholder="integrante@ejemplo.com">
+            </div>
+          </div>
+          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="form-group">
+              <label for="txtCarreraC">Carrera</label>
+              <select class="form-control" id="sltCarreraC">
+                <option value="0" selected>Selecciona una carrera</option>
+                <option v-for="carrera in carreras">
+                  ${ carrera.nombre }
+                </option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary pull-right">Guardar</button>
+      </form>
+    </main>
+  </div>
+</div>
+{% endblock %}
 
+{% block javascripts %}
+  <script src="{{ asset('js/vue.min.js') }}"></script>
+  <script src="{{ asset('js/axios.min.js') }}"></script>
+  <script src="{{ asset('js/app.js') }}"></script>
 {% endblock %}
