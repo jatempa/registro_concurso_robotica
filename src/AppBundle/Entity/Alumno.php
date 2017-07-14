@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -68,15 +69,10 @@ class Alumno
      */ 
     private $carrera;
 
-    /** @ORM\ManyToOne(targetEntity="AppBundle\Entity\Equipo", inversedBy="alumnos")
-     *  @ORM\JoinColumn(name="equipo", referencedColumnName="id_equipo")
-     */
-    private $equipo;
-
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -87,6 +83,7 @@ class Alumno
      * Set noControl
      *
      * @param string $noControl
+     *
      * @return Alumno
      */
     public function setNoControl($noControl)
@@ -99,7 +96,7 @@ class Alumno
     /**
      * Get noControl
      *
-     * @return string 
+     * @return string
      */
     public function getNoControl()
     {
@@ -110,6 +107,7 @@ class Alumno
      * Set nombre
      *
      * @param string $nombre
+     *
      * @return Alumno
      */
     public function setNombre($nombre)
@@ -122,7 +120,7 @@ class Alumno
     /**
      * Get nombre
      *
-     * @return string 
+     * @return string
      */
     public function getNombre()
     {
@@ -133,6 +131,7 @@ class Alumno
      * Set apellidoPaterno
      *
      * @param string $apellidoPaterno
+     *
      * @return Alumno
      */
     public function setApellidoPaterno($apellidoPaterno)
@@ -145,7 +144,7 @@ class Alumno
     /**
      * Get apellidoPaterno
      *
-     * @return string 
+     * @return string
      */
     public function getApellidoPaterno()
     {
@@ -156,6 +155,7 @@ class Alumno
      * Set apellidoMaterno
      *
      * @param string $apellidoMaterno
+     *
      * @return Alumno
      */
     public function setApellidoMaterno($apellidoMaterno)
@@ -168,7 +168,7 @@ class Alumno
     /**
      * Get apellidoMaterno
      *
-     * @return string 
+     * @return string
      */
     public function getApellidoMaterno()
     {
@@ -179,6 +179,7 @@ class Alumno
      * Set correoElectronico
      *
      * @param string $correoElectronico
+     *
      * @return Alumno
      */
     public function setCorreoElectronico($correoElectronico)
@@ -191,7 +192,7 @@ class Alumno
     /**
      * Get correoElectronico
      *
-     * @return string 
+     * @return string
      */
     public function getCorreoElectronico()
     {
@@ -202,6 +203,7 @@ class Alumno
      * Set semestre
      *
      * @param integer $semestre
+     *
      * @return Alumno
      */
     public function setSemestre($semestre)
@@ -214,7 +216,7 @@ class Alumno
     /**
      * Get semestre
      *
-     * @return integer 
+     * @return integer
      */
     public function getSemestre()
     {
@@ -225,11 +227,14 @@ class Alumno
      * Set carrera
      *
      * @param \AppBundle\Entity\Carrera $carrera
-     * @return Carrera 
+     *
+     * @return Alumno
      */
-    public function setCarrera($carrera)
+    public function setCarrera(\AppBundle\Entity\Carrera $carrera = null)
     {
         $this->carrera = $carrera;
+
+        return $this;
     }
 
     /**
@@ -242,32 +247,8 @@ class Alumno
         return $this->carrera;
     }
 
-    /**
-     * Set equipo
-     *
-     * @param \AppBundle\Entity\Equipo $equipo
-     *
-     * @return Alumno
-     */
-    public function setEquipo(\AppBundle\Entity\Equipo $equipo = null)
-    {
-        $this->equipo = $equipo;
-
-        return $this;
-    }
-
-    /**
-     * Get equipo
-     *
-     * @return \AppBundle\Entity\Equipo
-     */
-    public function getEquipo()
-    {
-        return $this->equipo;
-    }
-
     public function __toString()
     {
-        return $this->getNombre() . " " . $this->getApellidoPaterno() . " " . $this->getApellidoMaterno();
+        return $this->getNombre() . ' ' . $this->getApellidoPaterno() . ' ' . $this->getApellidoMaterno();
     }
 }

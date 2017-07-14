@@ -22,29 +22,45 @@ class Equipo
      */
     private $id;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=100)
+     */
+    private $nombre;
+
     /** @ORM\OneToOne(targetEntity="AppBundle\Entity\Asesor")
-     *  @ORM\JoinColumn(name="asesor", referencedColumnName="id")
+     *  @ORM\JoinColumn(name="asesor", referencedColumnName="id_asesor")
      */
     private $asesor;
 
     /** @ORM\OneToOne(targetEntity="AppBundle\Entity\Robot")
-     *  @ORM\JoinColumn(name="robot", referencedColumnName="id") 
+     *  @ORM\JoinColumn(name="robot", referencedColumnName="id_robot")
      */ 
     private $robot;
 
     /**
-     *  @ORM\OneToMany(targetEntity="AppBundle\Entity\Alumno", mappedBy="equipo")
+     * Many Equipos have Many Alumnos.
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Alumno")
+     * @ORM\JoinTable(name="equipo_alumnos",
+     *     joinColumns={@ORM\JoinColumn(name="equipo", referencedColumnName="id_equipo")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="alumno", referencedColumnName="id_alumno", unique=true)}
+     * )
      */
     private $alumnos;
 
-    public function __construct() {
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
         $this->alumnos = new ArrayCollection();
     }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -55,11 +71,14 @@ class Equipo
      * Set asesor
      *
      * @param \AppBundle\Entity\Asesor $asesor
-     * @return Asesor 
+     *
+     * @return Equipo
      */
-    public function setAsesor($asesor)
+    public function setAsesor(\AppBundle\Entity\Asesor $asesor = null)
     {
         $this->asesor = $asesor;
+
+        return $this;
     }
 
     /**
@@ -76,11 +95,14 @@ class Equipo
      * Set robot
      *
      * @param \AppBundle\Entity\Robot $robot
-     * @return Robot 
+     *
+     * @return Equipo
      */
-    public function setRobot($robot)
+    public function setRobot(\AppBundle\Entity\Robot $robot = null)
     {
         $this->robot = $robot;
+
+        return $this;
     }
 
     /**
@@ -93,8 +115,42 @@ class Equipo
         return $this->robot;
     }
 
-    public function __toString() 
-    { 
-        return $this->getRobot()->getNombre(); 
-    } 
+    /**
+     * Add alumno
+     *
+     * @param \AppBundle\Entity\Alumno $alumno
+     *
+     * @return Equipo
+     */
+    public function addAlumno(\AppBundle\Entity\Alumno $alumno)
+    {
+        $this->alumnos[] = $alumno;
+
+        return $this;
+    }
+
+    /**
+     * Remove alumno
+     *
+     * @param \AppBundle\Entity\Alumno $alumno
+     */
+    public function removeAlumno(\AppBundle\Entity\Alumno $alumno)
+    {
+        $this->alumnos->removeElement($alumno);
+    }
+
+    /**
+     * Get alumnos
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getAlumnos()
+    {
+        return $this->alumnos;
+    }
+
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
 }

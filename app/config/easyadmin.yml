@@ -42,7 +42,7 @@ easy_admin:
                   - { property: 'nombre', label: 'Nombre' }
                   - { property: 'apellidoPaterno', label: 'Apellido Paterno' }
                   - { property: 'apellidoMaterno', label: 'Apellido Materno' }
-                  - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico' }
+                  - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico', type_options: { required: true } }
                   - { property: 'carrera', label: 'Carrera' }
         Asesor:
             label: 'Asesores'
@@ -61,7 +61,7 @@ easy_admin:
                   - { property: 'nombre', label: 'Nombre' }
                   - { property: 'apellidoPaterno', label: 'Apellido Paterno' }
                   - { property: 'apellidoMaterno', label: 'Apellido Materno' }
-                  - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico' }
+                  - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico', type_options: { required: true } }
         Carrera:
             label: 'Carreras'
             class: AppBundle\Entity\Carrera
@@ -82,6 +82,7 @@ easy_admin:
                 actions: [{ name: 'new', label: 'Agregar Equipo' }]
                 fields:
                   - { property: 'id', label: 'ID' }
+                  - { property: 'nombre', label: 'Nombre' }
                   - { property: 'asesor', label: 'Asesor' }
                   - { property: 'robot', label: 'Robot' }
                   - { property: 'alumnos', label: 'Alumno' }

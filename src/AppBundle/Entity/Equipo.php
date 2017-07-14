@@ -22,6 +22,13 @@ class Equipo
      */
     private $id;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nombre", type="string", length=100)
+     */
+    private $nombre;
+
     /** @ORM\OneToOne(targetEntity="AppBundle\Entity\Asesor")
      *  @ORM\JoinColumn(name="asesor", referencedColumnName="id_asesor")
      */
@@ -33,18 +40,27 @@ class Equipo
     private $robot;
 
     /**
-     *  @ORM\OneToMany(targetEntity="AppBundle\Entity\Alumno", mappedBy="equipo")
+     * Many Equipos have Many Alumnos.
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Alumno")
+     * @ORM\JoinTable(name="equipo_alumnos",
+     *     joinColumns={@ORM\JoinColumn(name="equipo", referencedColumnName="id_equipo")},
+     *     inverseJoinColumns={@ORM\JoinColumn(name="alumno", referencedColumnName="id_alumno", unique=true)}
+     * )
      */
     private $alumnos;
 
-    public function __construct() {
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
         $this->alumnos = new ArrayCollection();
     }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -52,14 +68,41 @@ class Equipo
     }
 
     /**
+     * Set nombre
+     *
+     * @param string $nombre
+     *
+     * @return Equipo
+     */
+    public function setNombre($nombre)
+    {
+        $this->nombre = $nombre;
+
+        return $this;
+    }
+
+    /**
+     * Get nombre
+     *
+     * @return string
+     */
+    public function getNombre()
+    {
+        return $this->nombre;
+    }
+
+    /**
      * Set asesor
      *
      * @param \AppBundle\Entity\Asesor $asesor
-     * @return Asesor 
+     *
+     * @return Equipo
      */
-    public function setAsesor($asesor)
+    public function setAsesor(\AppBundle\Entity\Asesor $asesor = null)
     {
         $this->asesor = $asesor;
+
+        return $this;
     }
 
     /**
@@ -76,11 +119,14 @@ class Equipo
      * Set robot
      *
      * @param \AppBundle\Entity\Robot $robot
-     * @return Robot 
+     *
+     * @return Equipo
      */
-    public function setRobot($robot)
+    public function setRobot(\AppBundle\Entity\Robot $robot = null)
     {
         $this->robot = $robot;
+
+        return $this;
     }
 
     /**
@@ -129,6 +175,6 @@ class Equipo
 
     public function __toString()
     {
-        return $this->getRobot()->getNombre();
+        return $this->getNombre();
     }
 }
