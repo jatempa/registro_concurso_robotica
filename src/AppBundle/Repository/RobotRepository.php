@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class RobotRepository extends EntityRepository
 {
+    public function findRobots()
+    {
+        $em = $this->getEntityManager();
+        $dql = $em->createQueryBuilder();
+        $dql->select('r.nombre')
+            ->from('AppBundle:Robot', 'r');
+
+        return $dql->getQuery()->getResult();
+    }
 }
