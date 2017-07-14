@@ -38,6 +38,7 @@ easy_admin:
                   - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico' }
                   - { property: 'semestre', label: 'Semestre' }
                   - { property: 'carrera', label: 'Carrera' }
+                  - { property: 'capitan', label: 'Capitan' }
             form:
                 fields:
                   - { property: 'nombre', label: 'Nombre' }
@@ -46,6 +47,7 @@ easy_admin:
                   - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico', type_options: { required: true } }
                   - { property: 'semestre', label: 'Semestre' }
                   - { property: 'carrera', label: 'Carrera', type_options: { required: true } }
+                  - { property: 'capitan', label: 'Capitan' }
         Asesor:
             label: 'Asesores'
             class: AppBundle\Entity\Asesor

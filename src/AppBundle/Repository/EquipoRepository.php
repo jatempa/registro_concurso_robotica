@@ -20,7 +20,8 @@ class EquipoRepository extends EntityRepository
 		    ->from('AppBundle:Equipo', 'e')
             ->innerJoin('e.asesor', 'ase')
             ->innerJoin('e.robot', 'r')
-            ->innerJoin('e.alumnos', 'alu');
+            ->innerJoin('e.alumnos', 'alu')
+            ->where('alu.capitan = true');
 		return $dql->getQuery()->getResult();
 	}
 }

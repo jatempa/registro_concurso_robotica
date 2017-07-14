@@ -7,6 +7,7 @@ AppBundle\Entity\Alumno:
     correoElectronico: <email()>
     semestre: 5
     carrera: @carrera3
+    capitan: 1
   alumno2:
     noControl: '16491242'
     nombre: <firstName()>
@@ -15,6 +16,7 @@ AppBundle\Entity\Alumno:
     correoElectronico: <email()>
     semestre: 3
     carrera: @carrera3
+    capitan: 0
   alumno3:
     noControl: '1349857'
     nombre: <firstName()>
@@ -23,6 +25,7 @@ AppBundle\Entity\Alumno:
     correoElectronico: <email()>
     semestre: 6
     carrera: @carrera3
+    capitan: 0
   alumno4:
     noControl: '16490053'
     nombre: <firstName()>
@@ -31,6 +34,7 @@ AppBundle\Entity\Alumno:
     correoElectronico: <email()>
     semestre: 7
     carrera: @carrera3
+    capitan: 1
   alumno5:
     noControl: '15490532'
     nombre: <firstName()>
@@ -39,6 +43,7 @@ AppBundle\Entity\Alumno:
     correoElectronico: <email()>
     semestre: 5
     carrera: @carrera3
+    capitan: 0
   alumno6:
     noControl: '13490927'
     nombre: <firstName()>
@@ -47,6 +52,7 @@ AppBundle\Entity\Alumno:
     correoElectronico: <email()>
     semestre: 6
     carrera: @carrera3
+    capitan: 0
   alumno7:
     noControl: '13490047'
     nombre: <firstName()>
@@ -55,6 +61,7 @@ AppBundle\Entity\Alumno:
     correoElectronico: <email()>
     semestre: 9
     carrera: @carrera3
+    capitan: 1
   alumno8:
     noControl: '11490572'
     nombre: <firstName()>
@@ -63,6 +70,7 @@ AppBundle\Entity\Alumno:
     correoElectronico: <email()>
     semestre: 7
     carrera: @carrera3
+    capitan: 0
   alumno9:
     noControl: '12760389'
     nombre: <firstName()>
@@ -71,3 +79,4 @@ AppBundle\Entity\Alumno:
     correoElectronico: <email()>
     semestre: 8
     carrera: @carrera3
+    capitan: 0

@@ -70,6 +70,13 @@ class Alumno
     private $carrera;
 
     /**
+     * @var bool
+     *
+     * @ORM\Column(name="capitan", type="boolean")
+     */
+    private $capitan;
+
+    /**
      * Get id
      *
      * @return integer
@@ -245,6 +252,30 @@ class Alumno
     public function getCarrera()
     {
         return $this->carrera;
+    }
+
+    /**
+     * Set capitan
+     *
+     * @param boolean $capitan
+     *
+     * @return Alumno
+     */
+    public function setCapitan($capitan)
+    {
+        $this->capitan = $capitan;
+
+        return $this;
+    }
+
+    /**
+     * Get capitan
+     *
+     * @return boolean
+     */
+    public function getCapitan()
+    {
+        return $this->capitan;
     }
 
     public function __toString()
