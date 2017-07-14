@@ -1,4 +1,3 @@
-
 new Vue({
     delimiters: ['${', '}'],
     el: 'main',
