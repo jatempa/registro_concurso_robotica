@@ -12,4 +12,13 @@ use Doctrine\ORM\EntityRepository;
  */
 class CarreraRepository extends EntityRepository
 {
+    public function findCarreras()
+    {
+        $em = $this->getEntityManager();
+        $dql = $em->createQueryBuilder();
+        $dql->select('c.nombre')
+            ->from('AppBundle:Carrera', 'c');
+
+        return $dql->getQuery()->getResult();
+    }
 }
