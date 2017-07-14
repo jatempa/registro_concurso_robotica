@@ -1,5 +1,5 @@
 easy_admin:
-    site_name: 'Club de rob&oacute;tica'
+    site_name: 'Club de robótica'
     formats:
       date: 'd/m/Y'
     design:
@@ -30,24 +30,70 @@ easy_admin:
             list:
                 title: "Alumnos"
                 actions: [{ name: 'new', label: 'Agregar Alumno' }]
-                fields: ['id', 'nombre', 'apellido_paterno', 'apellido_materno', { property: 'correo_electronico', type: 'email', label: 'Correo electr&oacute;nico' }, 'carrera']
+                fields:
+                  - { property: 'id', label: 'ID' }
+                  - { property: 'nombre', label: 'Nombre' }
+                  - { property: 'apellidoPaterno', label: 'Apellido Paterno' }
+                  - { property: 'apellidoMaterno', label: 'Apellido Materno' }
+                  - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico' }
+                  - { property: 'carrera', label: 'Carrera' }
+            form:
+                fields:
+                  - { property: 'nombre', label: 'Nombre' }
+                  - { property: 'apellidoPaterno', label: 'Apellido Paterno' }
+                  - { property: 'apellidoMaterno', label: 'Apellido Materno' }
+                  - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico' }
+                  - { property: 'carrera', label: 'Carrera' }
         Asesor:
             label: 'Asesores'
             class: AppBundle\Entity\Asesor
             list:
                 title: "Asesores"
                 actions: [{ name: 'new', label: 'Agregar Asesor' }]
-                fields: ['id', 'nombre', 'correo_electronico', { property: 'correo_electronico', type: 'email', label: 'Correo electr&oacute;nico' }]
+                fields:
+                  - { property: 'id', label: 'ID' }
+                  - { property: 'nombre', label: 'Nombre' }
+                  - { property: 'apellidoPaterno', label: 'Apellido Paterno' }
+                  - { property: 'apellidoMaterno', label: 'Apellido Materno' }
+                  - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico' }
+            form:
+                fields:
+                  - { property: 'nombre', label: 'Nombre' }
+                  - { property: 'apellidoPaterno', label: 'Apellido Paterno' }
+                  - { property: 'apellidoMaterno', label: 'Apellido Materno' }
+                  - { property: 'correo_electronico', type: 'email', label: 'Correo electrónico' }
         Carrera:
             label: 'Carreras'
             class: AppBundle\Entity\Carrera
             list:
                 title: "Carreras"
                 actions: [{ name: 'new', label: 'Agregar Carrera' }]
-                fields: ['id', 'nombre']
+                fields:
+                  - { property: 'id', label: 'ID' }
+                  - { property: 'nombre', label: 'Nombre' }
+            form:
+                fields:
+                  - { property: 'nombre', label: 'Nombre' }
+        Equipo:
+            label: 'Equipos'
+            class: AppBundle\Entity\Equipo
+            list:
+                title: "Equipos"
+                actions: [{ name: 'new', label: 'Agregar Equipo' }]
+                fields:
+                  - { property: 'id', label: 'ID' }
+                  - { property: 'asesor', label: 'Asesor' }
+                  - { property: 'robot', label: 'Robot' }
+                  - { property: 'alumnos', label: 'Alumno' }
         Robot:
-            label: 'Robots'
+            label: 'Robot'
             class: AppBundle\Entity\Robot
             list:
-                title: "Robots"
+                title: "Robot"
                 actions: [{ name: 'new', label: 'Agregar Robot' }]
+                fields:
+                  - { property: 'id', label: 'ID' }
+                  - { property: 'nombre', label: 'Nombre' }
+            form:
+                fields:
+                  - { property: 'nombre', label: 'Nombre' }
