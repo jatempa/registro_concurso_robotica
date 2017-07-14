@@ -9,5 +9,6 @@ $set->addFile(__DIR__.'/Carreras.yml', 'yaml');
 $set->addFile(__DIR__.'/Asesores.yml', 'yaml');
 $set->addFile(__DIR__.'/Alumnos.yml', 'yaml');
 $set->addFile(__DIR__.'/Robots.yml', 'yaml');
+$set->addFile(__DIR__.'/Equipos.yml', 'yaml');
 
 return $set;

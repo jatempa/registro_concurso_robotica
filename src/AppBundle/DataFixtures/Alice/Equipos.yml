@@ -1,0 +1,25 @@
+AppBundle\Entity\Equipo:
+  equipo1:
+    nombre: 'Equipo 1'
+    asesor: @asesor1
+    robot: @robot1
+    alumnos:
+      - @alumno1
+      - @alumno2
+      - @alumno3
+  equipo2:
+    nombre: 'Equipo 2'
+    asesor: @asesor2
+    robot: @robot2
+    alumnos:
+      - @alumno4
+      - @alumno5
+      - @alumno6
+  equipo3:
+    nombre: 'Equipo 3'
+    asesor: @asesor3
+    robot: @robot3
+    alumnos:
+      - @alumno7
+      - @alumno8
+      - @alumno9
