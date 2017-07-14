@@ -37,7 +37,7 @@ class AsesorController extends Controller
         for ($i=0; $i < count($asesores); $i++) {
             $phpExcelObject->setActiveSheetIndex(0)->setCellValue('A'.((string)$i+2), $asesores[$i]['nombre']);
             $phpExcelObject->setActiveSheetIndex(0)->setCellValue('B'.((string)$i+2), $asesores[$i]['apellidoPaterno']);
-            $phpExcelObject->setActiveSheetIndex(0)->setCellValue('C'.((string)$i+2), $asesores[$i]['apellidoPaterno']);
+            $phpExcelObject->setActiveSheetIndex(0)->setCellValue('C'.((string)$i+2), $asesores[$i]['apellidoMaterno']);
             $phpExcelObject->setActiveSheetIndex(0)->setCellValue('D'.((string)$i+2), $asesores[$i]['correoElectronico']);
         }
 
