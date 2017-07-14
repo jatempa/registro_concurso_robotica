@@ -4,67 +4,62 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>{% block title %}Concurso de rob&oacute;tica ITM{% endblock %}</title>
     {% block stylesheets %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
-        <link href="{{ asset('css/materialize.css') }}" rel="stylesheet" type="text/css" />
+        <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet" />
+        <link href="{{ asset('css/bootstrap-theme.min.css') }}" rel="stylesheet" />
         <style>
-            .container {
-                margin-top: 50px;
+            body {
+                padding-top: 20px;
+                padding-bottom: 20px;
+            }
+
+            .navbar {
+                margin-bottom: 20px;
             }
         </style>
     {% endblock %}
 </head>
 <body>
-    {% block header %}
-    <nav>
-        <div class="nav-wrapper">
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                {% block menu %}
-                    <li><a href="{{ path('convocatoria') }}">Convocatoria</a></li>
-                {% endblock %}
-            </ul>
-        </div>
-    </nav>
-    {% endblock %}
-
-    <!-- Begin page content -->
     <div class="container">
-        {% block body %}{% endblock %}
-    </div>
-
-
-    {% block footer %}
-    <footer class="page-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col l6 s12">
-                    <h5 class="white-text">Footer Content</h5>
-                    <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+        <!-- Static navbar -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Club de robótica ITM</a>
                 </div>
-                <div class="col l4 offset-l2 s12">
-                    <h5 class="white-text">Links</h5>
-                    <ul>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-                        <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                      {% block menu %}
+                        <li><a href="{{ path('convocatoria') }}">Convocatoria</a></li>
+                        <li><a href="{{ path('registro') }}">Registo</a></li>
+                        <li><a href="#">Organizadores</a></li>
+                      {% endblock %}
                     </ul>
-                </div>
-            </div>
-        </div>
+                </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+        {% block body %}
+        {% endblock %}
+    </div> <!-- /container -->
+
+    <footer>
         <div class="footer-copyright">
             <div class="container">
                 <p>Sitio desarrollado por <a href="https://twitter.com/atempa09">@atempa09</a></p>
             </div>
         </div>
     </footer>
-    {% endblock %}
-
     {% block javascripts %}
         <script src="{{ asset('js/jquery.min.js') }}"></script>
-        <script src="{{ asset('js/materialize.js') }}"></script>
+        <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     {% endblock %}
 </body>
 </html>
