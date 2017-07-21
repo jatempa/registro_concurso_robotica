@@ -29,7 +29,7 @@ class Equipo
      */
     private $nombre;
 
-    /** @ORM\OneToOne(targetEntity="AppBundle\Entity\Asesor")
+    /** @ORM\ManyToOne(targetEntity="AppBundle\Entity\Asesor")
      *  @ORM\JoinColumn(name="asesor", referencedColumnName="id_asesor")
      */
     private $asesor;
