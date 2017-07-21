@@ -68,69 +68,36 @@ new Vue({
               'X-Requested-With': 'XMLHttpRequest',
           };
 
-          // let teamData = {
-          //     team: this.team,
-          //     robot: this.robot,
-          //     asesor: this.selectedAsesor,
-          //     captain: {
-          //         noControl: this.captain.noControl
-          //         name: this.captain.name,
-          //         firstLastName: this.captain.firstLastName,
-          //         secondLastName: this.captain.secondLastName,
-          //         email: this.captain.email,
-          //         selectedCareer: this.captain.selectedCareer
-          //         semester: this.captain.semester
-          //     },
-          //     firstAlumn: {
-          //         noControl: this.firstAlumn.noControl
-          //         name: this.firstAlumn.name,
-          //         firstLastName: this.firstAlumn.firstLastName,
-          //         secondLastName: this.firstAlumn.secondLastName,
-          //         email: this.firstAlumn.email,
-          //         selectedCareer: this.firstAlumn.selectedCareer
-          //         semester: this.firstAlumn.semester
-          //     },
-          //     secondAlumn: {
-          //         noControl: this.secondAlum.noControl
-          //         name: this.secondAlumn.name,
-          //         firstLastName: this.secondAlumn.firstLastName,
-          //         secondLastName: this.secondAlumn.secondLastName,
-          //         email: this.secondAlumn.email,
-          //         selectedCareer: this.secondAlumn.selectedCareer
-          //         semester: this.secondAlumn.semester
-          //     }
-          // };
-
           let teamData = {
-              team: 'Megatronix',
-              robot: 'Megazord',
-              asesor: 8,
+              team: this.team,
+              robot: this.robot,
+              asesor: this.selectedAsesor,
               captain: {
-                  noControl: '8532156',
-                  name: 'Juan',
-                  firstLastName: 'Peréz',
-                  secondLastName: 'Lopéz',
-                  email: 'juan.perez@gmail.com',
-                  selectedCareer: 3,
-                  semester: 8
+                  noControl: this.captain.noControl,
+                  name: this.captain.name,
+                  firstLastName: this.captain.firstLastName,
+                  secondLastName: this.captain.secondLastName,
+                  email: this.captain.email,
+                  selectedCareer: this.captain.selectedCareer,
+                  semester: parseInt(this.captain.semester)
               },
               firstAlumn: {
-                  noControl: '8411663',
-                  name: 'María',
-                  firstLastName: 'Rodriguez',
-                  secondLastName: 'Sanchez',
-                  email: 'maria.rod@gmail.com',
-                  selectedCareer: 6,
-                  semester: 8
+                  noControl: this.firstAlumn.noControl,
+                  name: this.firstAlumn.name,
+                  firstLastName: this.firstAlumn.firstLastName,
+                  secondLastName: this.firstAlumn.secondLastName,
+                  email: this.firstAlumn.email,
+                  selectedCareer: this.firstAlumn.selectedCareer,
+                  semester: parseInt(this.firstAlumn.semester)
               },
               secondAlumn: {
-                  noControl: '07490409',
-                  name: 'Jorge',
-                  firstLastName: 'Atempa',
-                  secondLastName: 'Camacho',
-                  email: 'jorge.atempa@itmexicali.edu.mx',
-                  selectedCareer: 5,
-                  semester: 9
+                  noControl: this.secondAlumn.noControl,
+                  name: this.secondAlumn.name,
+                  firstLastName: this.secondAlumn.firstLastName,
+                  secondLastName: this.secondAlumn.secondLastName,
+                  email: this.secondAlumn.email,
+                  selectedCareer: this.secondAlumn.selectedCareer,
+                  semester: parseInt(this.secondAlumn.semester)
               }
           };
 
