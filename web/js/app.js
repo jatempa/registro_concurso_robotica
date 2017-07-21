@@ -67,7 +67,15 @@ new Vue({
           axios.defaults.headers.common = {
               'X-Requested-With': 'XMLHttpRequest',
           };
-          let asesor, captain, firstAlumn, secondAlumn = null;
+          let team, robot, asesor, captain, firstAlumn, secondAlumn = null;
+
+          if ((this.team !== '' || this.team !== null)) {
+              team = this.team;
+          }
+
+          if ((this.robot !== '' || this.robot !== null)) {
+              robot = this.robot;
+          }
 
           if ((this.selectedAsesor === 0) && (this.asesor.name !== '' || this.asesor.name !== null) && (this.asesor.firstLastName !== '' || this.asesor.firstLastName !== null) && (this.asesor.email !== '' || this.asesor.email !== null)) {
               asesor = {
@@ -116,14 +124,7 @@ new Vue({
               }
           }
 
-          let teamData = {
-              team: this.team,
-              robot: this.robot,
-              asesor,
-              captain,
-              firstAlumn,
-              secondAlumn
-          };
+          let teamData = { team,  robot,  asesor,  captain,  firstAlumn, secondAlumn };
           
           axios.post('/api/registro/equipo/nuevo', teamData)
               .then(function (response) {

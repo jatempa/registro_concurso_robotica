@@ -11,13 +11,13 @@
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label>Nombre</label>
-              <input type="text" class="form-control" v-model="team" placeholder="Introduce el nombre de tú equipo">
+              <input type="text" class="form-control" v-model="team" placeholder="Introduce el nombre de tú equipo" required>
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label>Robot</label>
-              <input type="text" class="form-control" v-model="robot" placeholder="Introduce el nombre de tú robot">
+              <input type="text" class="form-control" v-model="robot" placeholder="Introduce el nombre de tú robot" required>
             </div>
           </div>
           <div v-if="!newAsesor">
@@ -84,19 +84,19 @@
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>No. Control</label>
-              <input type="text" class="form-control" v-model="captain.noControl" placeholder="No. de control del capitan">
+              <input type="text" class="form-control" v-model="captain.noControl" placeholder="No. de control del capitan" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Nombre(s)</label>
-              <input type="text" class="form-control" v-model="captain.name" placeholder="Nombre del capitan">
+              <input type="text" class="form-control" v-model="captain.name" placeholder="Nombre del capitan" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Apellido Paterno</label>
-              <input type="text" class="form-control" v-model="captain.firstLastName" placeholder="Apellido paterno del capitan">
+              <input type="text" class="form-control" v-model="captain.firstLastName" placeholder="Apellido paterno del capitan" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -110,13 +110,13 @@
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Correo electrónico</label>
-              <input type="email" class="form-control" v-model="captain.email" placeholder="capitan@ejemplo.com">
+              <input type="email" class="form-control" v-model="captain.email" placeholder="capitan@ejemplo.com" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Carrera</label>
-              <select class="form-control" v-model="captain.selectedCareer">
+              <select class="form-control" v-model="captain.selectedCareer" required>
                 <option value="0" selected>Selecciona una carrera</option>
                 <option v-for="career in careers" :value="career.id">
                   ${ career.nombre }
@@ -127,17 +127,17 @@
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Semestre</label>
-              <select class="form-control" v-model="captain.semester">
+              <select class="form-control" v-model="captain.semester" required>
                 <option value="0" selected>Selecciona tú semestre</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
+                <option value="1">Primer Semestre</option>
+                <option value="2">Segundo Semestre</option>
+                <option value="3">Tercer Semestre</option>
+                <option value="4">Cuarto Semestre</option>
+                <option value="5">Quinto Semestre</option>
+                <option value="6">Sexto Semestre</option>
+                <option value="7">Septimo Semestre</option>
+                <option value="8">Octavo Semestre</option>
+                <option value="9">Noveno Semestre</option>
               </select>
             </div>
           </div>
@@ -147,19 +147,19 @@
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>No. Control</label>
-              <input type="text" class="form-control" v-model="firstAlumn.noControl" placeholder="No. de control del integrante">
+              <input type="text" class="form-control" v-model="firstAlumn.noControl" placeholder="No. de control del integrante" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Nombre(s)</label>
-              <input type="text" class="form-control" v-model="firstAlumn.name" placeholder="Nombre del integrante">
+              <input type="text" class="form-control" v-model="firstAlumn.name" placeholder="Nombre del integrante" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Apellido Paterno</label>
-              <input type="text" class="form-control" v-model="firstAlumn.firstLastName" placeholder="Apellido paterno del integrante">
+              <input type="text" class="form-control" v-model="firstAlumn.firstLastName" placeholder="Apellido paterno del integrante" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -173,13 +173,13 @@
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Correo electrónico</label>
-              <input type="email" class="form-control" v-model="firstAlumn.email" placeholder="integrante@ejemplo.com">
+              <input type="email" class="form-control" v-model="firstAlumn.email" placeholder="integrante@ejemplo.com" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Carrera</label>
-              <select class="form-control" v-model="firstAlumn.selectedCareer">
+              <select class="form-control" v-model="firstAlumn.selectedCareer" required>
                 <option value="0" selected>Selecciona una carrera</option>
                 <option v-for="career in careers" :value="career.id">
                   ${ career.nombre }
@@ -190,17 +190,17 @@
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Semestre</label>
-              <select class="form-control" v-model="firstAlumn.semester">
+              <select class="form-control" v-model="firstAlumn.semester" required>
                 <option value="0" selected>Selecciona tú semestre</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
+                <option value="1">Primer Semestre</option>
+                <option value="2">Segundo Semestre</option>
+                <option value="3">Tercer Semestre</option>
+                <option value="4">Cuarto Semestre</option>
+                <option value="5">Quinto Semestre</option>
+                <option value="6">Sexto Semestre</option>
+                <option value="7">Septimo Semestre</option>
+                <option value="8">Octavo Semestre</option>
+                <option value="9">Noveno Semestre</option>
               </select>
             </div>
           </div>
@@ -210,19 +210,19 @@
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>No. Control</label>
-              <input type="text" class="form-control" v-model="secondAlumn.noControl" placeholder="No. de control del integrante">
+              <input type="text" class="form-control" v-model="secondAlumn.noControl" placeholder="No. de control del integrante" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Nombre(s)</label>
-              <input type="text" class="form-control" v-model="secondAlumn.name" placeholder="Nombre del integrante">
+              <input type="text" class="form-control" v-model="secondAlumn.name" placeholder="Nombre del integrante" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Apellido Paterno</label>
-              <input type="text" class="form-control" v-model="secondAlumn.firstLastName" placeholder="Apellido paterno del integrante">
+              <input type="text" class="form-control" v-model="secondAlumn.firstLastName" placeholder="Apellido paterno del integrante" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
@@ -236,13 +236,13 @@
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Correo electrónico</label>
-              <input type="email" class="form-control" v-model="secondAlumn.email" placeholder="integrante@ejemplo.com">
+              <input type="email" class="form-control" v-model="secondAlumn.email" placeholder="integrante@ejemplo.com" required>
             </div>
           </div>
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Carrera</label>
-              <select class="form-control" v-model="secondAlumn.selectedCareer">
+              <select class="form-control" v-model="secondAlumn.selectedCareer" required>
                 <option value="0" selected>Selecciona una carrera</option>
                 <option v-for="career in careers" :value="career.id">
                   ${ career.nombre }
@@ -253,17 +253,17 @@
           <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Semestre</label>
-              <select class="form-control" v-model="secondAlumn.semester">
+              <select class="form-control" v-model="secondAlumn.semester" required>
                 <option value="0" selected>Selecciona tú semestre</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-                <option value="6">6</option>
-                <option value="7">7</option>
-                <option value="8">8</option>
-                <option value="9">9</option>
+                <option value="1">Primer Semestre</option>
+                <option value="2">Segundo Semestre</option>
+                <option value="3">Tercer Semestre</option>
+                <option value="4">Cuarto Semestre</option>
+                <option value="5">Quinto Semestre</option>
+                <option value="6">Sexto Semestre</option>
+                <option value="7">Septimo Semestre</option>
+                <option value="8">Octavo Semestre</option>
+                <option value="9">Noveno Semestre</option>
               </select>
             </div>
           </div>
