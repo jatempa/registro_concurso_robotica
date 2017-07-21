@@ -18,9 +18,8 @@ class EquipoRestController extends Controller
     public function postRegistroEquipoAction(Request $request)
     {
         if ($request->isXmlHttpRequest()) {
-//            $respuesta = "OK-Nasdasduevo";
-
-            return new JsonResponse($request->headers->get('X-Requested-With'));
+            $result = "OK";
+            return new JsonResponse($result);
         }
 
         return new Response('This is not ajax!', 400);

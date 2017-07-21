@@ -9,7 +9,7 @@ use FOS\RestBundle\View\View;
 class CarreraRestController extends Controller
 {
     /**
-     * @Get("/carreras")
+     * @Get("/careers")
      */
     public function getCarrerasAction()
     {

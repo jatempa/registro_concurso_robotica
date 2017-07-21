@@ -13,7 +13,7 @@ use Symfony\Component\HttpFoundation\Response;
 class AsesorRestController extends Controller
 {
     /**
-     * @Get("/asesores")
+     * @Get("/asesors")
      */
     public function getAsesoresAction()
     {
