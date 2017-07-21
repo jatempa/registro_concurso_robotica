@@ -8,20 +8,20 @@
       <form @submit.prevent="createTeam">
         <h3>Equipo</h3>
         <div class="row">
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="form-group">
               <label>Nombre</label>
               <input type="text" class="form-control" v-model="team" placeholder="Introduce el nombre de tú equipo" required>
             </div>
           </div>
-          <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+          <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
             <div class="form-group">
               <label>Robot</label>
               <input type="text" class="form-control" v-model="robot" placeholder="Introduce el nombre de tú robot" required>
             </div>
           </div>
           <div v-if="!newAsesor">
-            <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
               <div class="form-group">
                 <label>Asesor</label>
                 <select class="form-control" v-model="selectedAsesor">
@@ -36,7 +36,7 @@
         </div>
         <div v-if="!newAsesor">
           <div class="row">
-            <div class="col-md-4 col-lg-4 col-md-offset-8 col-lg-offset-8">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-md-offset-8 col-lg-offset-8">
               <div class="form-group">
                 <input type="checkbox" @click="selectAddNewAsesor" /> Marca, si requieres registrar un nuevo asesor
               </div>
@@ -48,25 +48,25 @@
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
               <h3>Asesor</h3>
             </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
               <div class="form-group">
                 <label>Nombre(s)</label>
                 <input type="text" class="form-control" v-model="asesor.name" placeholder="Nombre de tú asesor">
               </div>
             </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
               <div class="form-group">
                 <label>Apellido Paterno</label>
                 <input type="text" class="form-control" v-model="asesor.firstLastName" placeholder="Apellido paterno de tú asesor">
               </div>
             </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
               <div class="form-group">
                 <label>Apellido Materno</label>
                 <input type="text" class="form-control" v-model="asesor.secondLastName" placeholder="Apellido materno de tú asesor">
               </div>
             </div>
-            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
               <div class="form-group">
                 <label>Correo electrónico</label>
                 <input type="email" class="form-control" v-model="asesor.email" placeholder="asesor@ejemplo.com">
@@ -81,25 +81,25 @@
         </div>
         <h3>Capit&aacute;n</h3>
         <div class="row">
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>No. Control</label>
               <input type="text" class="form-control" v-model="captain.noControl" placeholder="No. de control del capitan" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Nombre(s)</label>
               <input type="text" class="form-control" v-model="captain.name" placeholder="Nombre del capitan" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Apellido Paterno</label>
               <input type="text" class="form-control" v-model="captain.firstLastName" placeholder="Apellido paterno del capitan" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Apellido Materno</label>
               <input type="text" class="form-control" v-model="captain.secondLastName" placeholder="Apellido materno del capitan">
@@ -107,13 +107,13 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Correo electrónico</label>
               <input type="email" class="form-control" v-model="captain.email" placeholder="capitan@ejemplo.com" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Carrera</label>
               <select class="form-control" v-model="captain.selectedCareer" required>
@@ -124,7 +124,7 @@
               </select>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Semestre</label>
               <select class="form-control" v-model="captain.semester" required>
@@ -144,25 +144,25 @@
         </div>
         <h3>Integrante 2</h3>
         <div class="row">
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>No. Control</label>
               <input type="text" class="form-control" v-model="firstAlumn.noControl" placeholder="No. de control del integrante" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Nombre(s)</label>
               <input type="text" class="form-control" v-model="firstAlumn.name" placeholder="Nombre del integrante" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Apellido Paterno</label>
               <input type="text" class="form-control" v-model="firstAlumn.firstLastName" placeholder="Apellido paterno del integrante" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Apellido Materno</label>
               <input type="text" class="form-control" v-model="firstAlumn.secondLastName" placeholder="Apellido materno del integrante">
@@ -170,13 +170,13 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Correo electrónico</label>
               <input type="email" class="form-control" v-model="firstAlumn.email" placeholder="integrante@ejemplo.com" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Carrera</label>
               <select class="form-control" v-model="firstAlumn.selectedCareer" required>
@@ -187,7 +187,7 @@
               </select>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Semestre</label>
               <select class="form-control" v-model="firstAlumn.semester" required>
@@ -207,25 +207,25 @@
         </div>
         <h3>Integrante 3</h3>
         <div class="row">
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>No. Control</label>
               <input type="text" class="form-control" v-model="secondAlumn.noControl" placeholder="No. de control del integrante" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Nombre(s)</label>
               <input type="text" class="form-control" v-model="secondAlumn.name" placeholder="Nombre del integrante" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Apellido Paterno</label>
               <input type="text" class="form-control" v-model="secondAlumn.firstLastName" placeholder="Apellido paterno del integrante" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Apellido Materno</label>
               <input type="text" class="form-control" v-model="secondAlumn.secondLastName" placeholder="Apellido materno del integrante">
@@ -233,13 +233,13 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Correo electrónico</label>
               <input type="email" class="form-control" v-model="secondAlumn.email" placeholder="integrante@ejemplo.com" required>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Carrera</label>
               <select class="form-control" v-model="secondAlumn.selectedCareer" required>
@@ -250,7 +250,7 @@
               </select>
             </div>
           </div>
-          <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
+          <div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <div class="form-group">
               <label>Semestre</label>
               <select class="form-control" v-model="secondAlumn.semester" required>
