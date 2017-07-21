@@ -4,7 +4,6 @@ easy_admin:
       date: 'd/m/Y'
     design:
       color_scheme: 'dark'
-      brand_color: '#f44336'
       form_theme: 'horizontal'
     list:
         max_results: 10
