@@ -16,25 +16,31 @@ new Vue({
                 email: ''
             },
             captain: {
+                noControl: '',
                 name: '',
                 firstLastName: '',
                 secondLastName: '',
                 email: '',
-                selectedCareer: 0
+                selectedCareer: 0,
+                semester: 0
             },
             firstAlumn: {
+                noControl: '',
                 name: '',
                 firstLastName: '',
                 secondLastName: '',
                 email: '',
-                selectedCareer: 0
+                selectedCareer: 0,
+                semester: 0
             },
             secondAlumn: {
+                noControl: '',
                 name: '',
                 firstLastName: '',
                 secondLastName: '',
                 email: '',
-                selectedCareer: 0
+                selectedCareer: 0,
+                semester: 0
             }
         }
     },
@@ -62,30 +68,69 @@ new Vue({
               'X-Requested-With': 'XMLHttpRequest',
           };
 
+          // let teamData = {
+          //     team: this.team,
+          //     robot: this.robot,
+          //     asesor: this.selectedAsesor,
+          //     captain: {
+          //         noControl: this.captain.noControl
+          //         name: this.captain.name,
+          //         firstLastName: this.captain.firstLastName,
+          //         secondLastName: this.captain.secondLastName,
+          //         email: this.captain.email,
+          //         selectedCareer: this.captain.selectedCareer
+          //         semester: this.captain.semester
+          //     },
+          //     firstAlumn: {
+          //         noControl: this.firstAlumn.noControl
+          //         name: this.firstAlumn.name,
+          //         firstLastName: this.firstAlumn.firstLastName,
+          //         secondLastName: this.firstAlumn.secondLastName,
+          //         email: this.firstAlumn.email,
+          //         selectedCareer: this.firstAlumn.selectedCareer
+          //         semester: this.firstAlumn.semester
+          //     },
+          //     secondAlumn: {
+          //         noControl: this.secondAlum.noControl
+          //         name: this.secondAlumn.name,
+          //         firstLastName: this.secondAlumn.firstLastName,
+          //         secondLastName: this.secondAlumn.secondLastName,
+          //         email: this.secondAlumn.email,
+          //         selectedCareer: this.secondAlumn.selectedCareer
+          //         semester: this.secondAlumn.semester
+          //     }
+          // };
+
           let teamData = {
-              team: this.team,
-              robot: this.robot,
-              asesor: this.selectedAsesor,
+              team: 'Megatronix',
+              robot: 'Megazord',
+              asesor: 8,
               captain: {
-                  name: this.captain.name,
-                  firstLastName: this.captain.firstLastName,
-                  secondLastName: this.captain.secondLastName,
-                  email: this.captain.email,
-                  selectedCareer: this.captain.selectedCareer
+                  noControl: '8532156',
+                  name: 'Juan',
+                  firstLastName: 'Peréz',
+                  secondLastName: 'Lopéz',
+                  email: 'juan.perez@gmail.com',
+                  selectedCareer: 3,
+                  semester: 8
               },
               firstAlumn: {
-                  name: this.firstAlumn.name,
-                  firstLastName: this.firstAlumn.firstLastName,
-                  secondLastName: this.firstAlumn.secondLastName,
-                  email: this.firstAlumn.email,
-                  selectedCareer: this.firstAlumn.selectedCareer
+                  noControl: '8411663',
+                  name: 'María',
+                  firstLastName: 'Rodriguez',
+                  secondLastName: 'Sanchez',
+                  email: 'maria.rod@gmail.com',
+                  selectedCareer: 6,
+                  semester: 8
               },
               secondAlumn: {
-                  name: this.secondAlumn.name,
-                  firstLastName: this.secondAlumn.firstLastName,
-                  secondLastName: this.secondAlumn.secondLastName,
-                  email: this.secondAlumn.email,
-                  selectedCareer: this.secondAlumn.selectedCareer
+                  noControl: '07490409',
+                  name: 'Jorge',
+                  firstLastName: 'Atempa',
+                  secondLastName: 'Camacho',
+                  email: 'jorge.atempa@itmexicali.edu.mx',
+                  selectedCareer: 5,
+                  semester: 9
               }
           };
 
