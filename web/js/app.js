@@ -62,7 +62,34 @@ new Vue({
               'X-Requested-With': 'XMLHttpRequest',
           };
 
-          axios.post('/api/registro/equipo/nuevo', { 'carrera': 3 })
+          let teamData = {
+              team: this.team,
+              robot: this.robot,
+              asesor: this.selectedAsesor,
+              captain: {
+                  name: this.captain.name,
+                  firstLastName: this.captain.firstLastName,
+                  secondLastName: this.captain.secondLastName,
+                  email: this.captain.email,
+                  selectedCareer: this.captain.selectedCareer
+              },
+              firstAlumn: {
+                  name: this.firstAlumn.name,
+                  firstLastName: this.firstAlumn.firstLastName,
+                  secondLastName: this.firstAlumn.secondLastName,
+                  email: this.firstAlumn.email,
+                  selectedCareer: this.firstAlumn.selectedCareer
+              },
+              secondAlumn: {
+                  name: this.secondAlumn.name,
+                  firstLastName: this.secondAlumn.firstLastName,
+                  secondLastName: this.secondAlumn.secondLastName,
+                  email: this.secondAlumn.email,
+                  selectedCareer: this.secondAlumn.selectedCareer
+              }
+          };
+
+          axios.post('/api/registro/equipo/nuevo', teamData)
               .then(function (response) {
                   console.log(response);
               })
