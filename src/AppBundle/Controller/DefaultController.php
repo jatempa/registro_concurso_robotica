@@ -18,7 +18,7 @@ class DefaultController extends Controller
     }
  
     /**
-     * @Route("/registrar/equipo", name="registro")
+     * @Route("/registro", name="registro")
      * @Method("GET")
      */
     public function registroAction()

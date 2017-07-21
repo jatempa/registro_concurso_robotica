@@ -3,32 +3,75 @@ new Vue({
     el: 'main',
     data () {
         return {
-            asesores: [],
-            carreras: [],
-            nuevoasesor: false
+            asesors: [],
+            careers: [],
+            newAsesor: false,
+            robot: '',
+            team: '',
+            selectedAsesor: 0,
+            asesor: {
+                name: '',
+                firstLastName: '',
+                secondLastName: '',
+                email: ''
+            },
+            captain: {
+                name: '',
+                firstLastName: '',
+                secondLastName: '',
+                email: '',
+                selectedCareer: 0
+            },
+            firstAlumn: {
+                name: '',
+                firstLastName: '',
+                secondLastName: '',
+                email: '',
+                selectedCareer: 0
+            },
+            secondAlumn: {
+                name: '',
+                firstLastName: '',
+                secondLastName: '',
+                email: '',
+                selectedCareer: 0
+            }
         }
     },
     mounted () {
-        this.fetchAsesores(),
-        this.fetchCarreras()
+        this.fetchAsesors(),
+        this.fetchCareers()
     },
     methods: {
-      fetchAsesores () {
-        axios.get('/api/asesores')
+      fetchAsesors () {
+        axios.get('/api/asesors')
              .then(response => {
-                this.asesores = response.data.asesores
+                this.asesors = response.data.asesores
              }
         )
       },
-      fetchCarreras () {
-        axios.get('/api/carreras')
+      fetchCareers () {
+        axios.get('/api/careers')
              .then(response => {
-                this.carreras = response.data.carreras
+                this.careers = response.data.carreras
              }
         )
+      },
+      createTeam () {
+          axios.defaults.headers.common = {
+              'X-Requested-With': 'XMLHttpRequest',
+          };
+
+          axios.post('/api/registro/equipo/nuevo', { 'carrera': 3 })
+              .then(function (response) {
+                  console.log(response);
+              })
+              .catch(function (error) {
+                  console.log(error);
+              });
       },
       selectAsesor () {
-        this.nuevoasesor = false
+        this.newAsesor = false
       }
     }
-})
+});

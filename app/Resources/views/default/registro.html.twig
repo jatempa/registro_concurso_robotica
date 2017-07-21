@@ -5,47 +5,47 @@
   <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
     <h2>Formulario de registro</h2>
     <main>
-      <form>
+      <form @submit.prevent="createTeam">
         <h3>Equipo</h3>
         <div class="row">
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <div class="form-group">
               <label for="txtEquipo">Nombre</label>
-              <input type="text" class="form-control" id="txtEquipo" placeholder="Introduce el nombre de tú equipo">
+              <input type="text" class="form-control" v-model="team" placeholder="Introduce el nombre de tú equipo">
             </div>
           </div>
           <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
             <div class="form-group">
               <label for="txtRobot">Robot</label>
-              <input type="text" class="form-control" id="txtRobot" placeholder="Introduce el nombre de tú robot">
+              <input type="text" class="form-control" v-model="robot" placeholder="Introduce el nombre de tú robot">
             </div>
           </div>
         </div>
         <h3>Asesor</h3>
         <div class="row">
-          <div v-if="nuevoasesor">
+          <div v-if="newAsesor">
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <div class="form-group">
                 <label for="txtNombreAsesor">Nombre(s)</label>
-                <input type="text" class="form-control" id="txtNombreAsesor" placeholder="Nombre de tú asesor">
+                <input type="text" class="form-control" v-model="asesor.name" placeholder="Nombre de tú asesor">
               </div>
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <div class="form-group">
                 <label for="txtAppAsesor">Apellido Paterno</label>
-                <input type="text" class="form-control" id="txtAppAsesor" placeholder="Apellido paterno de tú asesor">
+                <input type="text" class="form-control" v-model="asesor.firstLastName" placeholder="Apellido paterno de tú asesor">
               </div>
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <div class="form-group">
                 <label for="txtApmAsesor">Apellido Materno</label>
-                <input type="text" class="form-control" id="txtApmAsesor" placeholder="Apellido materno de tú asesor">
+                <input type="text" class="form-control" v-model="asesor.secondLastName" placeholder="Apellido materno de tú asesor">
               </div>
             </div>
             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3">
               <div class="form-group">
                 <label for="txtEmailAsesor">Correo electrónico</label>
-                <input type="email" class="form-control" id="txtEmailAsesor" placeholder="asesor@ejemplo.com">
+                <input type="email" class="form-control" v-model="asesor.email" placeholder="asesor@ejemplo.com">
               </div>
             </div>
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
@@ -57,13 +57,9 @@
           <div v-else>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
               <div class="form-group">
-                <select class="form-control" id="sltAsesor">
-<<<<<<< HEAD
+                <select class="form-control" v-model="selectedAsesor">
                   <option value="0" selected>Selecciona un asesor</option>
-=======
-                  <option value="0" selected>Selecciona el nombre de un Asesor</option>
->>>>>>> 293de23ef59f3e84d733fb95640b52f940287a2d
-                  <option v-for="asesor in asesores">
+                  <option v-for="asesor in asesors" :value="asesor.id">
                     ${ asesor.nombre } ${ asesor.apellidoPaterno } ${ asesor.apellidoMaterno }
                   </option>
                 </select>
@@ -71,48 +67,44 @@
             </div>
             <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
               <div class="form-group">
-                <input type="checkbox" v-model="nuevoasesor"/> Elige esta casilla para registrar un nuevo asesor
+                <input type="checkbox" v-model="newAsesor"/> Elige esta casilla para registrar un nuevo asesor
+              </div>
             </div>
           </div>
         </div>
-        </div>
-<<<<<<< HEAD
         <h3>Capit&aacute;n</h3>
-=======
-        <h3>Capitan</h3>
->>>>>>> 293de23ef59f3e84d733fb95640b52f940287a2d
         <div class="row">
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtNombreAlumnoA">Nombre(s)</label>
-              <input type="text" class="form-control" id="txtNombreAlumnoA" placeholder="Nombre del capitan">
+              <input type="text" class="form-control" v-model="captain.name" placeholder="Nombre del capitan">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtAppAlumnoA">Apellido Paterno</label>
-              <input type="text" class="form-control" id="txtAppAlumnoA" placeholder="Apellido paterno del capitan">
+              <input type="text" class="form-control" v-model="captain.firstLastName" placeholder="Apellido paterno del capitan">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtApmAlumnoA">Apellido Materno</label>
-              <input type="text" class="form-control" id="txtApmAlumnoA" placeholder="Apellido materno del capitan">
+              <input type="text" class="form-control" v-model="captain.secondLastName" placeholder="Apellido materno del capitan">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtEmailAlumnoA">Correo electrónico</label>
-              <input type="email" class="form-control" id="txtEmailAlumnoA" placeholder="capitan@ejemplo.com">
+              <input type="email" class="form-control" v-model="captain.email" placeholder="capitan@ejemplo.com">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtCarreraA">Carrera</label>
-              <select class="form-control" id="sltCarreraA">
+              <select class="form-control" v-model="captain.selectedCareer">
                 <option value="0" selected>Selecciona una carrera</option>
-                <option v-for="carrera in carreras">
-                    ${ carrera.nombre }
+                <option v-for="career in careers" :value="career.id">
+                  ${ career.nombre }
                 </option>
               </select>
             </div>
@@ -123,34 +115,34 @@
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtNombreAlumnoB">Nombre(s)</label>
-              <input type="text" class="form-control" id="txtNombreAlumnoB" placeholder="Nombre del integrante">
+              <input type="text" class="form-control" v-model="firstAlumn.name" placeholder="Nombre del integrante">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtAppAlumnoB">Apellido Paterno</label>
-              <input type="text" class="form-control" id="txtAppAlumnoB" placeholder="Apellido paterno del integrante">
+              <input type="text" class="form-control" v-model="firstAlumn.firstLastName" placeholder="Apellido paterno del integrante">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtApmAlumnoB">Apellido Materno</label>
-              <input type="text" class="form-control" id="txtApmAlumnoB" placeholder="Apellido materno del integrante">
+              <input type="text" class="form-control" v-model="firstAlumn.secondLastName" placeholder="Apellido materno del integrante">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtEmailAlumnoB">Correo electrónico</label>
-              <input type="email" class="form-control" id="txtEmailAlumnoB" placeholder="integrante@ejemplo.com">
+              <input type="email" class="form-control" v-model="firstAlumn.email" placeholder="integrante@ejemplo.com">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtCarreraB">Carrera</label>
-              <select class="form-control" id="sltCarreraB">
+              <select class="form-control" v-model="firstAlumn.selectedCareer">
                 <option value="0" selected>Selecciona una carrera</option>
-                <option v-for="carrera in carreras">
-                  ${ carrera.nombre }
+                <option v-for="career in careers" :value="career.id">
+                  ${ career.nombre }
                 </option>
               </select>
             </div>
@@ -161,34 +153,34 @@
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtNombreAlumnoC">Nombre(s)</label>
-              <input type="text" class="form-control" id="txtNombreAlumnoC" placeholder="Nombre del integrante">
+              <input type="text" class="form-control" v-model="secondAlumn.name" placeholder="Nombre del integrante">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtAppAlumnoC">Apellido Paterno</label>
-              <input type="text" class="form-control" id="txtAppAlumnoC" placeholder="Apellido paterno del integrante">
+              <input type="text" class="form-control" v-model="secondAlumn.firstLastName" placeholder="Apellido paterno del integrante">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtApmAlumnoC">Apellido Materno</label>
-              <input type="text" class="form-control" id="txtApmAlumnoC" placeholder="Apellido materno del integrante">
+              <input type="text" class="form-control" v-model="secondAlumn.secondLastName" placeholder="Apellido materno del integrante">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtEmailAlumnoC">Correo electrónico</label>
-              <input type="email" class="form-control" id="txtEmailAlumnoC" placeholder="integrante@ejemplo.com">
+              <input type="email" class="form-control" v-model="secondAlumn.email" placeholder="integrante@ejemplo.com">
             </div>
           </div>
           <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
             <div class="form-group">
               <label for="txtCarreraC">Carrera</label>
-              <select class="form-control" id="sltCarreraC">
+              <select class="form-control" v-model="secondAlumn.selectedCareer">
                 <option value="0" selected>Selecciona una carrera</option>
-                <option v-for="carrera in carreras">
-                  ${ carrera.nombre }
+                <option v-for="career in careers" :value="career.id">
+                  ${ career.nombre }
                 </option>
               </select>
             </div>

@@ -66,8 +66,10 @@ fos_user:
         sender_name: 'Concurso de Robot Seguilínea 2017'
 
 fos_rest:
+    body_listener: true
     view:
         formats:
+            jsonp: true
             json: true
         templating_formats:
             html: true

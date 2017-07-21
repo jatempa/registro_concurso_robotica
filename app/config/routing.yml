@@ -12,10 +12,15 @@ easy_admin_bundle:
 
 asesor_rest:
     type: rest
-    resource: "@AppBundle/Controller/AsesorRestController.php"
-    prefix: /api
+    resource: AppBundle\Controller\AsesorRestController
+    prefix: /api/
 
 carrera_rest:
     type: rest
-    resource: "@AppBundle/Controller/CarreraRestController.php"
-    prefix: /api
+    resource: AppBundle\Controller\CarreraRestController
+    prefix: /api/
+
+equipo_rest:
+    type: rest
+    resource: AppBundle\Controller\EquipoRestController
+    prefix: /api/
